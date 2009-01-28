@@ -1,4 +1,6 @@
-XCode3 iPhone project with Lite3* classes for serialization and deserialization to a sqlite3 database.
+XCode3 iPhone project with Lite3* classes for serialization and deserialization of arbitrary classes to a sqlite3 database.
+
+THIS PROJECT IS IN ALPHA STAGE. I am working on it as part of another application and I am implementing and sharing features as I need them.
 
 Also integrated the Unit tests from the Google Toolkit for Mac.
 
