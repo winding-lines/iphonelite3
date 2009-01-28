@@ -41,7 +41,7 @@
     db = [Lite3DB alloc];        
     db = [db initWithDbName: @"test" andSql:@"create table hello(id integer, name text);"];
     [GTMUnitTestDevLog log: @"full path: %@", db.dbPath];
-    helloTable = [Lite3Table lite3TableName: @"hello" withParent: db forClassName:@"Hello"];
+    helloTable = [Lite3Table lite3TableName: @"hello" withDb: db forClassName:@"Hello"];
     
 }
 

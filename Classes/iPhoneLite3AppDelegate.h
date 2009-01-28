@@ -28,6 +28,9 @@
 
 @interface iPhoneLite3AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+    IBOutlet UITabBarController * tabBarController;
+    IBOutlet UINavigationController * structureNavigationController;
+    IBOutlet UINavigationController * dataNavigationController;
     iPhoneLite3ViewController *viewController;
 }
 
