@@ -1,0 +1,9 @@
+XCode3 iPhone project with Lite3* classes for serialization and deserialization to a sqlite3 database.
+
+Also integrated the Unit tests from the Google Toolkit for Mac.
+
+Look in the file Test/Lite3DBTest.m for example of usage. Generally the database will be created and deployed with the application so that you can ship pre-filled tables. The other option is to create the database upon first usage by providing the DDL.
+
+This is work in progress released under an MIT license. Check the files for important limitations of this code. Do not use this code if you do not agree to the limitations set forth in the license.
+
+iphonelite3@de-co-de.com

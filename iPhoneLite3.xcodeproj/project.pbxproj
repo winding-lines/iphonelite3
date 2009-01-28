@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
+		18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD930F2FE23D003AADED /* Lite3DBTest.m */; };
+		18ECFDA20F2FE23D003AADED /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD940F2FE23D003AADED /* Hello.m */; };
+		18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */; };
+		18ECFDA40F2FE23D003AADED /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */; };
+		18ECFDA50F2FE23D003AADED /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9A0F2FE23D003AADED /* GTMRegex.m */; };
+		18ECFDA60F2FE23D003AADED /* GTMIPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9C0F2FE23D003AADED /* GTMIPhoneUnitTestMain.m */; };
+		18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9D0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m */; };
+		18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9F0F2FE23D003AADED /* GTMDevLog.m */; };
+		18ECFDAF0F2FE30F003AADED /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDA90F2FE30F003AADED /* Lite3Table.m */; };
+		18ECFDB00F2FE30F003AADED /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDAB0F2FE30F003AADED /* Lite3LinkTable.m */; };
+		18ECFDB10F2FE30F003AADED /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDAD0F2FE30F003AADED /* Lite3DB.m */; };
+		18ECFDB20F2FE319003AADED /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDAD0F2FE30F003AADED /* Lite3DB.m */; };
+		18ECFDB30F2FE319003AADED /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDAB0F2FE30F003AADED /* Lite3LinkTable.m */; };
+		18ECFDB40F2FE31A003AADED /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFDA90F2FE30F003AADED /* Lite3Table.m */; };
+		18ECFDB60F2FE377003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
+		1D3623260D0F684500981E51 /* iPhoneLite3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* iPhoneLite3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* iPhoneLite3ViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* iPhoneLite3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* iPhoneLite3ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = UnitTest.app; path = "build/Debug-iphonesimulator/UnitTest.app"; sourceTree = "<group>"; };
+		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
+		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		18ECFD930F2FE23D003AADED /* Lite3DBTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lite3DBTest.m; path = Test/Lite3DBTest.m; sourceTree = "<group>"; };
+		18ECFD940F2FE23D003AADED /* Hello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Hello.m; path = Test/Hello.m; sourceTree = "<group>"; };
+		18ECFD950F2FE23D003AADED /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hello.h; path = Test/Hello.h; sourceTree = "<group>"; };
+		18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMUnitTestDevLog.m; path = Test/GTMUnitTestDevLog.m; sourceTree = "<group>"; };
+		18ECFD970F2FE23D003AADED /* GTMUnitTestDevLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMUnitTestDevLog.h; path = Test/GTMUnitTestDevLog.h; sourceTree = "<group>"; };
+		18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMSenTestCase.m; path = Test/GTMSenTestCase.m; sourceTree = "<group>"; };
+		18ECFD990F2FE23D003AADED /* GTMSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMSenTestCase.h; path = Test/GTMSenTestCase.h; sourceTree = "<group>"; };
+		18ECFD9A0F2FE23D003AADED /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMRegex.m; path = Test/GTMRegex.m; sourceTree = "<group>"; };
+		18ECFD9B0F2FE23D003AADED /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMRegex.h; path = Test/GTMRegex.h; sourceTree = "<group>"; };
+		18ECFD9C0F2FE23D003AADED /* GTMIPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestMain.m; path = Test/GTMIPhoneUnitTestMain.m; sourceTree = "<group>"; };
+		18ECFD9D0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMIPhoneUnitTestDelegate.m; path = Test/GTMIPhoneUnitTestDelegate.m; sourceTree = "<group>"; };
+		18ECFD9E0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = Test/GTMIPhoneUnitTestDelegate.h; sourceTree = "<group>"; };
+		18ECFD9F0F2FE23D003AADED /* GTMDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMDevLog.m; path = Test/GTMDevLog.m; sourceTree = "<group>"; };
+		18ECFDA00F2FE23D003AADED /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = Test/GTMDefines.h; sourceTree = "<group>"; };
+		18ECFDA90F2FE30F003AADED /* Lite3Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Table.m; sourceTree = "<group>"; };
+		18ECFDAA0F2FE30F003AADED /* Lite3Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Table.h; sourceTree = "<group>"; };
+		18ECFDAB0F2FE30F003AADED /* Lite3LinkTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3LinkTable.m; sourceTree = "<group>"; };
+		18ECFDAC0F2FE30F003AADED /* Lite3LinkTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3LinkTable.h; sourceTree = "<group>"; };
+		18ECFDAD0F2FE30F003AADED /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DB.m; sourceTree = "<group>"; };
+		18ECFDAE0F2FE30F003AADED /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3DB.h; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* iPhoneLite3AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneLite3AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneLite3AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iPhoneLite3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneLite3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* iPhoneLite3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iPhoneLite3ViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* iPhoneLite3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneLite3ViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* iPhoneLite3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneLite3ViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* iPhoneLite3_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneLite3_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18ECFD890F2FE1E5003AADED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				18ECFDB60F2FE377003AADED /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18ECFDA90F2FE30F003AADED /* Lite3Table.m */,
+				18ECFDAA0F2FE30F003AADED /* Lite3Table.h */,
+				18ECFDAB0F2FE30F003AADED /* Lite3LinkTable.m */,
+				18ECFDAC0F2FE30F003AADED /* Lite3LinkTable.h */,
+				18ECFDAD0F2FE30F003AADED /* Lite3DB.m */,
+				18ECFDAE0F2FE30F003AADED /* Lite3DB.h */,
+				1D3623240D0F684500981E51 /* iPhoneLite3AppDelegate.h */,
+				1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* iPhoneLite3ViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* iPhoneLite3ViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		18ECFD770F2FE10D003AADED /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18ECFD930F2FE23D003AADED /* Lite3DBTest.m */,
+				18ECFD940F2FE23D003AADED /* Hello.m */,
+				18ECFD950F2FE23D003AADED /* Hello.h */,
+				18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */,
+				18ECFD970F2FE23D003AADED /* GTMUnitTestDevLog.h */,
+				18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */,
+				18ECFD990F2FE23D003AADED /* GTMSenTestCase.h */,
+				18ECFD9A0F2FE23D003AADED /* GTMRegex.m */,
+				18ECFD9B0F2FE23D003AADED /* GTMRegex.h */,
+				18ECFD9C0F2FE23D003AADED /* GTMIPhoneUnitTestMain.m */,
+				18ECFD9D0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m */,
+				18ECFD9E0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.h */,
+				18ECFD9F0F2FE23D003AADED /* GTMDevLog.m */,
+				18ECFDA00F2FE23D003AADED /* GTMDefines.h */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iPhoneLite3.app */,
+				18ECFD8B0F2FE1E5003AADED /* UnitTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				18ECFD770F2FE10D003AADED /* Test */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */,
+				18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* iPhoneLite3_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2899E5210DE3E06400AC0155 /* iPhoneLite3ViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18ECFD8A0F2FE1E5003AADED /* UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18ECFD900F2FE1E7003AADED /* Build configuration list for PBXNativeTarget "UnitTest" */;
+			buildPhases = (
+				18ECFD870F2FE1E5003AADED /* Resources */,
+				18ECFD880F2FE1E5003AADED /* Sources */,
+				18ECFD890F2FE1E5003AADED /* Frameworks */,
+				18ECFDBA0F2FE3F2003AADED /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTest;
+			productName = UnitTest;
+			productReference = 18ECFD8B0F2FE1E5003AADED /* UnitTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D6058900D05DD3D006BFB54 /* iPhoneLite3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPhoneLite3" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPhoneLite3;
+			productName = iPhoneLite3;
+			productReference = 1D6058910D05DD3D006BFB54 /* iPhoneLite3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhoneLite3" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iPhoneLite3 */,
+				18ECFD8A0F2FE1E5003AADED /* UnitTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18ECFD870F2FE1E5003AADED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* iPhoneLite3ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18ECFDBA0F2FE3F2003AADED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./RunIPhoneUnitTest.sh;
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18ECFD880F2FE1E5003AADED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */,
+				18ECFDA20F2FE23D003AADED /* Hello.m in Sources */,
+				18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */,
+				18ECFDA40F2FE23D003AADED /* GTMSenTestCase.m in Sources */,
+				18ECFDA50F2FE23D003AADED /* GTMRegex.m in Sources */,
+				18ECFDA60F2FE23D003AADED /* GTMIPhoneUnitTestMain.m in Sources */,
+				18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */,
+				18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */,
+				18ECFDAF0F2FE30F003AADED /* Lite3Table.m in Sources */,
+				18ECFDB00F2FE30F003AADED /* Lite3LinkTable.m in Sources */,
+				18ECFDB10F2FE30F003AADED /* Lite3DB.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* iPhoneLite3AppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* iPhoneLite3ViewController.m in Sources */,
+				18ECFDB20F2FE319003AADED /* Lite3DB.m in Sources */,
+				18ECFDB30F2FE319003AADED /* Lite3LinkTable.m in Sources */,
+				18ECFDB40F2FE31A003AADED /* Lite3Table.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		18ECFD8E0F2FE1E7003AADED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UnitTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTest;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Debug;
+		};
+		18ECFD8F0F2FE1E7003AADED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UnitTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTest;
+				SDKROOT = iphoneos2.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhoneLite3_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iPhoneLite3;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhoneLite3_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iPhoneLite3;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18ECFD900F2FE1E7003AADED /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18ECFD8E0F2FE1E7003AADED /* Debug */,
+				18ECFD8F0F2FE1E7003AADED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPhoneLite3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhoneLite3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
