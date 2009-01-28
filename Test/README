@@ -1,0 +1,7 @@
+All the GTM* files are from the Google Toolbox for the Mac
+
+http://code.google.com/p/google-toolbox-for-mac/
+
+For an example on how to use the code look at Lite3DBTest.m and Hello.*
+
+In the XCode project select as the Active Target the one called "Unit Test" and Build. This will automatically run the tests, you do not need to deploy to the device.
