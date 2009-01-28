@@ -1,3 +1,11 @@
+One day after I created this project I found the following project through the iPhone dev twitter list.
+
+http://code.google.com/p/sqlitepersistentobjects/
+
+Gotta love it :-)
+
+My approach is a bit different so I will continue using iphonelite3 for my current project.
+
 XCode3 iPhone project with Lite3* classes for serialization and deserialization of arbitrary classes to a sqlite3 database.
 
 THIS PROJECT IS IN ALPHA STAGE. I am working on it as part of another application and I am implementing and sharing features as I need them.
