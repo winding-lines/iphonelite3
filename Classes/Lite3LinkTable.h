@@ -24,6 +24,8 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
+
 @class Lite3Table;
 
 /**
@@ -36,6 +38,10 @@
     NSString * secondaryClassName;
     // link to the second table (only known after all the tables have been read in)
     Lite3Table * secondaryTable;
+    // precompiled update statement
+    sqlite3_stmt * updateStmt;
+    // precompiled delete statement for a given primary class id
+    sqlite3_stmt * deleteForPrimaryStmt;
 }
 
 @property (nonatomic,retain) Lite3Table * mainTable;

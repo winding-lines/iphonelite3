@@ -52,7 +52,6 @@
 @synthesize tableName;
 @synthesize className;
 @synthesize arguments;
-@synthesize update_stmt;
 @synthesize linkedTables;
 
 
@@ -60,7 +59,7 @@
     db = dp;
     className = clsName;
     [db addLite3Table: self];
-    update_stmt = NULL;
+    updateStmt = NULL;
     return self;
 }
 
@@ -68,8 +67,8 @@
     [tableName release]; 
     [arguments release];
     [className release];
-    if ( update_stmt != NULL ) {
-        sqlite3_finalize(update_stmt);
+    if ( updateStmt != NULL ) {
+        sqlite3_finalize(updateStmt);
     }
     [super dealloc];
 }
@@ -93,9 +92,7 @@
     NSLog(@"Creating stored procedure %@.", query);
     const char *cString =[query UTF8String];
     const char * pzTail;
-    sqlite3_stmt * stmt;
-    int rc = sqlite3_prepare_v2(   db.dbHandle,   cString,    -1,    &stmt, &pzTail );
-    self.update_stmt = stmt;
+    int rc = sqlite3_prepare_v2(   db.dbHandle,   cString,    -1,    &updateStmt, &pzTail );
     return [db checkError: rc];
     
 }
@@ -188,7 +185,7 @@
  * Update from the object or dictionary using Key Value access.
  */
 - (int)update:(id)data {
-    int rc = sqlite3_clear_bindings(update_stmt);    
+    int rc = sqlite3_clear_bindings(updateStmt);    
     [db checkError: rc];
     for( int i=0;i<[arguments count];i++ ) {
         Lite3Arg * pa = [arguments objectAtIndex:i];
@@ -196,37 +193,37 @@
         if ( toBind != nil && toBind != [NSNull null] ) {
             switch (pa.preparedType) {
                 case _PREPARED_TYPE_INT:
-                    rc = sqlite3_bind_int(update_stmt, i+1, [toBind intValue]);
+                    rc = sqlite3_bind_int(updateStmt, i+1, [toBind intValue]);
                     [db checkError: rc];
                     break;
                 case _PREPARED_TYPE_DOUBLE:
-                    rc = sqlite3_bind_double(update_stmt, i+1, [toBind floatValue]);
+                    rc = sqlite3_bind_double(updateStmt, i+1, [toBind floatValue]);
                     [db checkError: rc];
                     break;
                 case _PREPARED_TYPE_STRING:
                 {
                     const char * cString = [toBind UTF8String];
-                    rc = sqlite3_bind_text(update_stmt, i+1, cString, strlen(cString), NULL);
+                    rc = sqlite3_bind_text(updateStmt, i+1, cString, strlen(cString), NULL);
                     [db checkError: rc];
                 }
                     break;
                 case _PREPARED_TYPE_TIMESTAMP: {
                     const char * cString = [[toBind description] UTF8String];                    
-                    rc = sqlite3_bind_text(update_stmt, i+1, cString, strlen(cString), NULL );
+                    rc = sqlite3_bind_text(updateStmt, i+1, cString, strlen(cString), NULL );
                 }
                 default:
                     break;
             }
         }
     }
-    rc = sqlite3_step(update_stmt);
+    rc = sqlite3_step(updateStmt);
     sqlite_int64 lastId = sqlite3_last_insert_rowid(db.dbHandle);
     //NSLog( @"last id: %d", lastId );
     if ( lastId == 0 ) {
         NSLog( @"No value inserted" );
     }
     [db checkError: rc];
-    rc = sqlite3_reset(update_stmt);
+    rc = sqlite3_reset(updateStmt);
     [db checkError: rc];
     return lastId;
 }

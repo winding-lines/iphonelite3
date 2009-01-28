@@ -34,5 +34,9 @@
 @synthesize secondaryClassName;
 @synthesize secondaryTable;
 
+-(BOOL)compilePrepareStatement  {
+    return FALSE;
+}
+
 
 @end

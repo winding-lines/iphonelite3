@@ -54,7 +54,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 @interface Lite3Table : NSObject {
     Lite3DB * db;
     // precompiled update statement
-    sqlite3_stmt * update_stmt;
+    sqlite3_stmt * updateStmt;
     // the table name
     NSString * tableName;
     // the name of the class being persisted in this table
@@ -69,7 +69,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 @property(nonatomic,retain) NSString * className;
 @property(nonatomic,retain) NSArray * arguments;
 @property(nonatomic,retain) NSArray * linkedTables;
-@property(nonatomic) sqlite3_stmt *update_stmt;
 
 + (Lite3Table*)lite3TableName:(NSString*)name withParent:(Lite3DB*)dp forClassName:(NSString*)clsName;
 /**
