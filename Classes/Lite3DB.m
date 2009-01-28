@@ -199,7 +199,7 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     return TRUE;
 }
 
-+(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p db:(Lite3DB*)db tableName: (NSString*)tableName arguments: (NSArray*)arguments  {
+-(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName arguments: (NSArray*)arguments  {
     NSMutableString * query = [NSMutableString stringWithFormat: @"insert or replace into %@ (", tableName];
     NSMutableString * values = [[NSMutableString alloc] init];
     for( int i=0;i<[arguments count];i++ ) {
@@ -217,10 +217,15 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     values = nil;
     // NSLog(@"Creating stored procedure %@.", query);
     const char *cString =[query UTF8String];
-    const char * pzTail;
-    int rc = sqlite3_prepare_v2(   db.dbHandle,   cString,    -1,  stmt_p, &pzTail );
-    return [db checkError: rc];
+    int rc = sqlite3_prepare_v2( dbHandle, cString, -1, stmt_p, NULL );
+    return [self checkError: rc];
     
+}
+
+-(BOOL)compileCountStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName {
+    NSString * query = [[NSString alloc] initWithFormat: @"select count(*) from %@;", tableName ];
+    int rc = sqlite3_prepare_v2( dbHandle, [query UTF8String], -1, stmt_p, NULL);
+    return [self checkError: rc];
 }
 
 

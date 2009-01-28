@@ -58,7 +58,7 @@
 -(BOOL)compileStatements  {
     [self prepareArguments];
     NSString * tableName = [NSString stringWithFormat: @"%@_%@", mainTable.tableName, secondaryTable.tableName];
-    return [Lite3DB compileUpdateStatement: &updateStmt db: db tableName: tableName arguments: arguments];
+    return [db compileUpdateStatement: &updateStmt tableName: tableName arguments: arguments];
 }
 
 -(void)dealloc {

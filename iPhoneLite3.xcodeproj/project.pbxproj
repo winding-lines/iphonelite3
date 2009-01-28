@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181992030F30B89C0002A348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181992020F30B89C0002A348 /* Icon.png */; };
 		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
 		18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD930F2FE23D003AADED /* Lite3DBTest.m */; };
 		18ECFDA20F2FE23D003AADED /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD940F2FE23D003AADED /* Hello.m */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181992020F30B89C0002A348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -112,6 +114,13 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		181991E50F30B7150002A348 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		18ECFD770F2FE10D003AADED /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +154,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				181992020F30B89C0002A348 /* Icon.png */,
+				181991E50F30B7150002A348 /* images */,
 				18ECFD770F2FE10D003AADED /* Test */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -247,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181992030F30B89C0002A348 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,6 +55,8 @@ OTHER DEALINGS IN THE SOFTWARE.
     Lite3DB * db;
     // precompiled update statement
     sqlite3_stmt * updateStmt;
+    // precompiled count statement
+    sqlite3_stmt * countStmt;
     // the table name
     NSString * tableName;
     // the name of the class being persisted in this table
@@ -73,7 +75,12 @@ OTHER DEALINGS IN THE SOFTWARE.
 + (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db forClassName:(NSString*)clsName;
 
 /**
- * Update the database from the object or  dictionary.
+ * Return the count of objects in the database.
+ */
+-(int)count;
+
+/**
+ * Update the table from the object or  dictionary.
  */
 - (int)update:(id)data;
 

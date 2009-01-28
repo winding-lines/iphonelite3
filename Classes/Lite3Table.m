@@ -60,6 +60,7 @@
     className = clsName;
     [db addLite3Table: self];
     updateStmt = NULL;
+    countStmt = NULL;
     return self;
 }
 
@@ -71,12 +72,21 @@
     if ( updateStmt != NULL ) {
         sqlite3_finalize(updateStmt);
     }
+    if ( countStmt != NULL ) {
+        sqlite3_finalize(countStmt);
+    }
     [super dealloc];
 }
 
 
 - (BOOL)compileUpdateStatement {
-    return [Lite3DB compileUpdateStatement: &updateStmt db: db tableName: tableName arguments: arguments];
+    if ( ! [db compileUpdateStatement: &updateStmt tableName: tableName arguments: arguments] ) {
+        return FALSE;
+    }
+    if ( ![db compileCountStatement: &countStmt tableName: tableName ] ) {
+        return FALSE;
+    }
+    return TRUE;
 }
 
 
@@ -211,6 +221,18 @@
     [db checkError: rc];
     return lastId;
 }
+
+-(int)count {
+    int count;
+    int rc = sqlite3_step(countStmt);
+    [db checkError: rc];
+    count =  sqlite3_column_int(countStmt,0);
+    rc = sqlite3_reset(countStmt);
+    return count;
+
+}
+
+
 
 
 /**

@@ -68,6 +68,8 @@
  */
 - (BOOL)endTransaction;
 
-+(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p db:(Lite3DB*)db tableName: (NSString*)tableName arguments: (NSArray*)arguments;
+-(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName arguments: (NSArray*)arguments;
+
+-(BOOL)compileCountStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName;
 
 @end
