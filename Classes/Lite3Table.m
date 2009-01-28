@@ -64,6 +64,7 @@
 }
 
 - (void)dealloc {
+    [linkedTables release];
     [tableName release]; 
     [arguments release];
     [className release];
@@ -73,31 +74,13 @@
     [super dealloc];
 }
 
--(BOOL)compilePrepareStatement  {
-    NSMutableString * query = [NSMutableString stringWithFormat: @"insert or replace into %@ (", tableName];
-    NSMutableString * values = [[NSMutableString alloc] init];
-    for( int i=0;i<[arguments count];i++ ) {
-        if ( i > 0 ) {
-            [query appendString: @","];
-            [values appendString: @","];
-        }
-        [query appendString: [[arguments objectAtIndex:i] name]];
-        [values appendString: @"?"];
-    }
-    [query appendString:@" ) values ("];
-    [query appendString: values];
-    [query appendString: @");"];
-    [values release];
-    values = nil;
-    NSLog(@"Creating stored procedure %@.", query);
-    const char *cString =[query UTF8String];
-    const char * pzTail;
-    int rc = sqlite3_prepare_v2(   db.dbHandle,   cString,    -1,    &updateStmt, &pzTail );
-    return [db checkError: rc];
-    
+
+- (BOOL)compileUpdateStatement {
+    return [Lite3DB compileUpdateStatement: &updateStmt db: db tableName: tableName arguments: arguments];
 }
 
-+ (Lite3Table*)lite3TableName:(NSString*)name withParent:(Lite3DB*)dp forClassName:(NSString*)clsName {
+
++ (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db forClassName:(NSString*)clsName {
     NSMutableArray * _arguments = [[NSMutableArray alloc] init];
     NSMutableDictionary * _linkDictionary = [[NSMutableDictionary alloc] init];
     Class cls = objc_getClass([clsName cStringUsingEncoding: NSASCIIStringEncoding]);
@@ -120,20 +103,20 @@
                 const char *attributes = property_getAttributes(properties[i]);
                 if ( attributes != NULL ) {
                     if ( strncmp(attributes,"Ti",2) == 0 ) {
-                        pa.preparedType = _PREPARED_TYPE_INT;
+                        pa.preparedType = _LITE3_INT;
                     } else if ( strncmp(attributes,"Td",2) == 0 ) {
-                        pa.preparedType = _PREPARED_TYPE_DOUBLE;
+                        pa.preparedType = _LITE3_DOUBLE;
                     } else if ( strncmp(attributes,"T@\"NSString\"",12) == 0 ) {
-                        pa.preparedType = _PREPARED_TYPE_STRING;
+                        pa.preparedType = _LITE3_STRING;
                     } else if ( strncmp(attributes,"T@\"NSDate\"",10) == 0 ) {
-                        pa.preparedType = _PREPARED_TYPE_TIMESTAMP;
+                        pa.preparedType = _LITE3_TIMESTAMP;
                     } else if ( strncmp(attributes,"T^@\"", 4 ) == 0 ) {
                         // assume this is a many-to-many relationship and extract the class name
                         const char * comma = strchr( attributes, ',' );
                         comma = comma - 5;
                         NSString * className = [NSString stringWithCString: attributes+4 length:(comma-attributes)];
                         if ( [_linkDictionary objectForKey: className] == nil ) {
-                            Lite3LinkTable * linkTable = [[Lite3LinkTable alloc] init];
+                            Lite3LinkTable * linkTable = [[Lite3LinkTable alloc] initWithDb: _db];
                             linkTable.secondaryClassName = className;
                             [_linkDictionary setObject:linkTable forKey:className];
                         }
@@ -154,12 +137,13 @@
         }
     }
     
-    Lite3Table * pt = [[[Lite3Table alloc] initWithDB: dp className: clsName] autorelease];
+    Lite3Table * pt = [[[Lite3Table alloc] initWithDB: _db className: clsName] autorelease];
     pt.arguments = _arguments;
     pt.tableName = name;    
     pt.linkedTables = [[NSArray alloc] initWithArray: [_linkDictionary allValues]];
     
-    if ( ![pt compilePrepareStatement] ) {
+
+    if ( ![pt compileUpdateStatement]) {
         [pt release];
         pt = nil;
     }
@@ -192,22 +176,22 @@
         id toBind = [data valueForKey:pa.name];
         if ( toBind != nil && toBind != [NSNull null] ) {
             switch (pa.preparedType) {
-                case _PREPARED_TYPE_INT:
+                case _LITE3_INT:
                     rc = sqlite3_bind_int(updateStmt, i+1, [toBind intValue]);
                     [db checkError: rc];
                     break;
-                case _PREPARED_TYPE_DOUBLE:
+                case _LITE3_DOUBLE:
                     rc = sqlite3_bind_double(updateStmt, i+1, [toBind floatValue]);
                     [db checkError: rc];
                     break;
-                case _PREPARED_TYPE_STRING:
+                case _LITE3_STRING:
                 {
                     const char * cString = [toBind UTF8String];
                     rc = sqlite3_bind_text(updateStmt, i+1, cString, strlen(cString), NULL);
                     [db checkError: rc];
                 }
                     break;
-                case _PREPARED_TYPE_TIMESTAMP: {
+                case _LITE3_TIMESTAMP: {
                     const char * cString = [[toBind description] UTF8String];                    
                     rc = sqlite3_bind_text(updateStmt, i+1, cString, strlen(cString), NULL );
                 }
@@ -263,22 +247,22 @@ static int multipleRowCallback(void *helperP, int columnCount, char **values, ch
                 
                 void * varIndex = (void **)((char *)object + ivar_getOffset(pa.ivar));
                 switch ( pa.preparedType ) {
-                    case _PREPARED_TYPE_INT: {
+                    case _LITE3_INT: {
                         long extracted = atol( value );
                         
                         *(long*)varIndex = extracted;
                     }
                         break;
-                    case _PREPARED_TYPE_DOUBLE: {
+                    case _LITE3_DOUBLE: {
                         double extracted = atof( value );
                         *(double*)varIndex = extracted;
                     } 
                         break;
-                    case _PREPARED_TYPE_STRING: {
+                    case _LITE3_STRING: {
                         NSString * extracted = [[NSString stringWithCString:value encoding:NSUTF8StringEncoding] retain];
                         object_setInstanceVariable( object, name, extracted );
                     } break;
-                    case _PREPARED_TYPE_TIMESTAMP: {
+                    case _LITE3_TIMESTAMP: {
                         NSString * extracted = [[NSString stringWithCString:value encoding:NSUTF8StringEncoding] retain];
                         object_setInstanceVariable( object, name, extracted );
                     } break;

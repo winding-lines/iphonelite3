@@ -24,10 +24,9 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
+
 @class Lite3Table;
-
-
-typedef struct sqlite3 sqlite3;
 
 
 @interface Lite3DB : NSObject {
@@ -69,5 +68,6 @@ typedef struct sqlite3 sqlite3;
  */
 - (BOOL)endTransaction;
 
++(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p db:(Lite3DB*)db tableName: (NSString*)tableName arguments: (NSArray*)arguments;
 
 @end

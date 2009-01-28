@@ -189,10 +189,38 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
                     NSLog( @"Bad linked table %@ in primary table %@", linked.secondaryClassName, className );
                     return FALSE;
                 }
+                if ( ![linked compileStatements] ) {
+                    NSLog(@"Could not compile staments" );
+                    return FALSE;
+                }
             }
         }
     }
     return TRUE;
+}
+
++(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p db:(Lite3DB*)db tableName: (NSString*)tableName arguments: (NSArray*)arguments  {
+    NSMutableString * query = [NSMutableString stringWithFormat: @"insert or replace into %@ (", tableName];
+    NSMutableString * values = [[NSMutableString alloc] init];
+    for( int i=0;i<[arguments count];i++ ) {
+        if ( i > 0 ) {
+            [query appendString: @","];
+            [values appendString: @","];
+        }
+        [query appendString: [[arguments objectAtIndex:i] name]];
+        [values appendString: @"?"];
+    }
+    [query appendString:@" ) values ("];
+    [query appendString: values];
+    [query appendString: @");"];
+    [values release];
+    values = nil;
+    // NSLog(@"Creating stored procedure %@.", query);
+    const char *cString =[query UTF8String];
+    const char * pzTail;
+    int rc = sqlite3_prepare_v2(   db.dbHandle,   cString,    -1,  stmt_p, &pzTail );
+    return [db checkError: rc];
+    
 }
 
 

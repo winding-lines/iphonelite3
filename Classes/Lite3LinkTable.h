@@ -26,12 +26,15 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
+@class Lite3DB;
 @class Lite3Table;
+
 
 /**
  * Store information about a table that backs a many-to-many relationship.
  */
 @interface Lite3LinkTable : NSObject {
+    Lite3DB * db;
     // link to the main table, one side of the many-to-many relationship
     Lite3Table * mainTable;
     // name of the class for the other side of the relationship
@@ -42,12 +45,16 @@
     sqlite3_stmt * updateStmt;
     // precompiled delete statement for a given primary class id
     sqlite3_stmt * deleteForPrimaryStmt;
+    
+    NSArray * arguments;
 }
 
 @property (nonatomic,retain) Lite3Table * mainTable;
 @property (nonatomic,retain) NSString * secondaryClassName;
 @property (nonatomic,retain) Lite3Table * secondaryTable;
 
+-(id)initWithDb:(Lite3DB*) _db;
+-(BOOL)compileStatements;
 
 
 @end

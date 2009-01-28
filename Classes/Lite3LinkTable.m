@@ -34,8 +34,44 @@
 @synthesize secondaryClassName;
 @synthesize secondaryTable;
 
--(BOOL)compilePrepareStatement  {
-    return FALSE;
+-(id)initWithDb:(Lite3DB*)_db {
+    if (![super init] ) {
+        return nil;
+    }
+    db = _db;
+    updateStmt = NULL;
+    deleteForPrimaryStmt=NULL;
+    return self;
+}
+
+-(void)prepareArguments {
+    if ( arguments != nil ) {
+        return;
+    }
+    Lite3Arg * primary = [[Lite3Arg alloc] init];
+    primary.name = [[NSString alloc] initWithFormat: @"%@_id", [mainTable.className lowercaseString]];
+    Lite3Arg * secondary = [[Lite3Arg alloc] init];
+    secondary.name = [[NSString alloc] initWithFormat: @"%@_id",[secondaryTable.className lowercaseString]];
+    arguments = [[NSMutableArray alloc] initWithObjects: primary, secondary ];
+}
+
+-(BOOL)compileStatements  {
+    [self prepareArguments];
+    NSString * tableName = [NSString stringWithFormat: @"%@_%@", mainTable.tableName, secondaryTable.tableName];
+    return [Lite3DB compileUpdateStatement: &updateStmt db: db tableName: tableName arguments: arguments];
+}
+
+-(void)dealloc {
+    if ( updateStmt != NULL) {
+        sqlite3_finalize(updateStmt); updateStmt=NULL;
+    }
+    if( deleteForPrimaryStmt != NULL ) {
+        sqlite3_finalize(deleteForPrimaryStmt); deleteForPrimaryStmt=NULL;
+    }
+    [arguments dealloc];
+    [mainTable dealloc];
+    [secondaryTable dealloc];
+    [super dealloc];
 }
 
 

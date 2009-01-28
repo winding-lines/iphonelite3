@@ -28,10 +28,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 #import <objc/runtime.h>
 @class Lite3DB;
 
-#define _PREPARED_TYPE_INT 1
-#define _PREPARED_TYPE_DOUBLE 2
-#define _PREPARED_TYPE_STRING 3
-#define _PREPARED_TYPE_TIMESTAMP 4
+#define _LITE3_INT 1
+#define _LITE3_DOUBLE 2
+#define _LITE3_STRING 3
+#define _LITE3_TIMESTAMP 4
 
 @interface Lite3Arg: NSObject {
     NSString * name;
@@ -70,11 +70,20 @@ OTHER DEALINGS IN THE SOFTWARE.
 @property(nonatomic,retain) NSArray * arguments;
 @property(nonatomic,retain) NSArray * linkedTables;
 
-+ (Lite3Table*)lite3TableName:(NSString*)name withParent:(Lite3DB*)dp forClassName:(NSString*)clsName;
++ (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db forClassName:(NSString*)clsName;
+
 /**
- * Update from the object or  dictionary.
+ * Update the database from the object or  dictionary.
  */
 - (int)update:(id)data;
+
+/**
+ * Return a list of objects that match the optional selectClause.
+ */
 - (NSMutableArray*) select: (NSString*)selectClause;
+
+/**
+ * Delete all the objects in the database.
+ */
 - (void)truncate;
 @end
