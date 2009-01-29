@@ -86,7 +86,6 @@ static const char * ddl =
     [groupsTable truncate];
     STAssertEquals( 0, [groupsTable count], @"Groups table not empty after truncate, instead %d", [groupsTable count] );
     [groupsTable updateAll: data];
-    [data release];
     STAssertEquals ( 1, [groupsTable count], @"Groups table does not have proper count of rows %d", [groupsTable count] );
     
     Lite3LinkTable * regionsUsers = [groupsTable.linkedTables objectAtIndex: 0];

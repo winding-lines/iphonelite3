@@ -1,0 +1,3 @@
+[submodule "Lite3"]
+	path = Lite3
+	url = git://github.com/decodeideas/iphonelite3-lib.git

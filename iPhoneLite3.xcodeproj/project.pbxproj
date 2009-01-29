@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		181992030F30B89C0002A348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181992020F30B89C0002A348 /* Icon.png */; };
 		18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18750CF10F31588B007B55EC /* NSArrayTest.m */; };
-		18B7C3740F3187F000013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C36E0F3187F000013531 /* Lite3Table.m */; };
-		18B7C3750F3187F000013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C3700F3187F000013531 /* Lite3LinkTable.m */; };
-		18B7C3760F3187F000013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C3720F3187F000013531 /* Lite3DB.m */; };
-		18B7C3770F3187F000013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C36E0F3187F000013531 /* Lite3Table.m */; };
-		18B7C3780F3187F000013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C3700F3187F000013531 /* Lite3LinkTable.m */; };
-		18B7C3790F3187F000013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C3720F3187F000013531 /* Lite3DB.m */; };
 		18B7C5310F31A8CC00013531 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52C0F31A8CC00013531 /* Group.m */; };
 		18B7C5320F31A8CC00013531 /* GroupTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52E0F31A8CC00013531 /* GroupTest.m */; };
 		18B7C5330F31A8CC00013531 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52F0F31A8CC00013531 /* User.m */; };
+		18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
+		18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
+		18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
+		18B7C5B50F32408C00013531 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 18B7C59A0F32408C00013531 /* README */; };
+		18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
+		18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
+		18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
+		18B7C5D00F32408C00013531 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 18B7C59A0F32408C00013531 /* README */; };
 		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
 		18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD930F2FE23D003AADED /* Lite3DBTest.m */; };
 		18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */; };
@@ -40,17 +42,19 @@
 /* Begin PBXFileReference section */
 		181992020F30B89C0002A348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		18750CF10F31588B007B55EC /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayTest.m; path = Test/NSArrayTest.m; sourceTree = "<group>"; };
-		18B7C36E0F3187F000013531 /* Lite3Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lite3Table.m; path = Lite3/Lite3Table.m; sourceTree = "<group>"; };
-		18B7C36F0F3187F000013531 /* Lite3Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lite3Table.h; path = Lite3/Lite3Table.h; sourceTree = "<group>"; };
-		18B7C3700F3187F000013531 /* Lite3LinkTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lite3LinkTable.m; path = Lite3/Lite3LinkTable.m; sourceTree = "<group>"; };
-		18B7C3710F3187F000013531 /* Lite3LinkTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lite3LinkTable.h; path = Lite3/Lite3LinkTable.h; sourceTree = "<group>"; };
-		18B7C3720F3187F000013531 /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lite3DB.m; path = Lite3/Lite3DB.m; sourceTree = "<group>"; };
-		18B7C3730F3187F000013531 /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lite3DB.h; path = Lite3/Lite3DB.h; sourceTree = "<group>"; };
 		18B7C52C0F31A8CC00013531 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Test/Group.m; sourceTree = "<group>"; };
 		18B7C52D0F31A8CC00013531 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Test/Group.h; sourceTree = "<group>"; };
 		18B7C52E0F31A8CC00013531 /* GroupTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTest.m; path = Test/GroupTest.m; sourceTree = "<group>"; };
 		18B7C52F0F31A8CC00013531 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Test/User.m; sourceTree = "<group>"; };
 		18B7C5300F31A8CC00013531 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Test/User.h; sourceTree = "<group>"; };
+		18B7C55B0F320E6500013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		18B7C5940F32408C00013531 /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3DB.h; sourceTree = "<group>"; };
+		18B7C5950F32408C00013531 /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DB.m; sourceTree = "<group>"; };
+		18B7C5960F32408C00013531 /* Lite3LinkTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3LinkTable.h; sourceTree = "<group>"; };
+		18B7C5970F32408C00013531 /* Lite3LinkTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3LinkTable.m; sourceTree = "<group>"; };
+		18B7C5980F32408C00013531 /* Lite3Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Table.h; sourceTree = "<group>"; };
+		18B7C5990F32408C00013531 /* Lite3Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Table.m; sourceTree = "<group>"; };
+		18B7C59A0F32408C00013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -107,7 +111,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18B7C36D0F3187D300013531 /* Lite3 */,
 				1D3623240D0F684500981E51 /* iPhoneLite3AppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* iPhoneLite3ViewController.h */,
@@ -123,17 +126,26 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		18B7C36D0F3187D300013531 /* Lite3 */ = {
+		18B7C56A0F32408C00013531 /* Lite3 */ = {
 			isa = PBXGroup;
 			children = (
-				18B7C36E0F3187F000013531 /* Lite3Table.m */,
-				18B7C36F0F3187F000013531 /* Lite3Table.h */,
-				18B7C3700F3187F000013531 /* Lite3LinkTable.m */,
-				18B7C3710F3187F000013531 /* Lite3LinkTable.h */,
-				18B7C3720F3187F000013531 /* Lite3DB.m */,
-				18B7C3730F3187F000013531 /* Lite3DB.h */,
+				18B7C5930F32408C00013531 /* Classes */,
+				18B7C59A0F32408C00013531 /* README */,
 			);
-			name = Lite3;
+			path = Lite3;
+			sourceTree = "<group>";
+		};
+		18B7C5930F32408C00013531 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18B7C5940F32408C00013531 /* Lite3DB.h */,
+				18B7C5950F32408C00013531 /* Lite3DB.m */,
+				18B7C5960F32408C00013531 /* Lite3LinkTable.h */,
+				18B7C5970F32408C00013531 /* Lite3LinkTable.m */,
+				18B7C5980F32408C00013531 /* Lite3Table.h */,
+				18B7C5990F32408C00013531 /* Lite3Table.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		18ECFD770F2FE10D003AADED /* Test */ = {
@@ -173,6 +185,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				18B7C56A0F32408C00013531 /* Lite3 */,
+				18B7C55B0F320E6500013531 /* README */,
 				181992020F30B89C0002A348 /* Icon.png */,
 				181991E50F30B7150002A348 /* images */,
 				18ECFD770F2FE10D003AADED /* Test */,
@@ -278,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181992030F30B89C0002A348 /* Icon.png in Resources */,
+				18B7C5B50F32408C00013531 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +302,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* iPhoneLite3ViewController.xib in Resources */,
+				18B7C5D00F32408C00013531 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,12 +338,12 @@
 				18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */,
 				18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */,
-				18B7C3740F3187F000013531 /* Lite3Table.m in Sources */,
-				18B7C3750F3187F000013531 /* Lite3LinkTable.m in Sources */,
-				18B7C3760F3187F000013531 /* Lite3DB.m in Sources */,
 				18B7C5310F31A8CC00013531 /* Group.m in Sources */,
 				18B7C5320F31A8CC00013531 /* GroupTest.m in Sources */,
 				18B7C5330F31A8CC00013531 /* User.m in Sources */,
+				18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */,
+				18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */,
+				18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +354,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iPhoneLite3AppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* iPhoneLite3ViewController.m in Sources */,
-				18B7C3770F3187F000013531 /* Lite3Table.m in Sources */,
-				18B7C3780F3187F000013531 /* Lite3LinkTable.m in Sources */,
-				18B7C3790F3187F000013531 /* Lite3DB.m in Sources */,
+				18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */,
+				18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */,
+				18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
