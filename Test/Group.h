@@ -23,17 +23,17 @@
  OTHER DEALINGS IN THE SOFTWARE.
  */
 #import <Foundation/Foundation.h>
+@class User;
 
 
-/**
- * Sample class to be saved to the database.
- */
-@interface Hello : NSObject {
+@interface Group : NSObject {
     int _id;
     NSString * name;
+    User ** users;
 }
 
-@property (nonatomic) int _id;
-@property (nonatomic,retain) NSString* name;
+@property(nonatomic) int _id;
+@property(nonatomic,retain) NSString* name;
+@property(nonatomic) User ** users;
 
 @end

@@ -77,8 +77,6 @@
     [secondary release];
 }
 
-
-
 -(BOOL)compileStatements  {
     [self prepareArguments];
     ownTable = [Lite3Table lite3TableName:[self computeLinkTableName] withDb:db];
@@ -91,19 +89,20 @@
     if( deleteForPrimaryStmt != NULL ) {
         sqlite3_finalize(deleteForPrimaryStmt); deleteForPrimaryStmt=NULL;
     }
-    [arguments dealloc];
-    [primaryTable dealloc];
-    [secondaryTable dealloc];
-    [ownTable dealloc];
+    [arguments release];
+    [primaryTable release];
+    [secondaryTable release];
+    [ownTable release];
     [super dealloc];
 }
 
 -(int)update: (id)data {
-    NSArray * ids = [data objectForKey: [self computePropertyName]];
-    if ( ids == nil ) {
+    NSArray * secondaryIds = [data objectForKey: [self computePropertyName]];
+    int _id = [[data objectForKey: @"id"] intValue];
+    if ( secondaryIds == nil ) {
         return 0;
     }
-    NSLog(@"Need to finish the implementation here");
+    NSLog(@"---------- primary %d, secondary count %d ", _id, [secondaryIds count] );
     return 0;
 }
 

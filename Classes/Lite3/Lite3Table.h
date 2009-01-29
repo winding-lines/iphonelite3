@@ -83,6 +83,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 -(BOOL)tableExists;
 
 /**
+ * Check to see if this object has been properly initialized.
+ */
+- (BOOL)isValid;
+
+/**
  * Compile statements after the class is initialized. 
  * This is not required if passing in a class name to the factory method.
  * Probably better to do this automatically when setting the arguments.

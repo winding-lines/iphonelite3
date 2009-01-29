@@ -22,56 +22,18 @@
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
  */
-
 #import <Foundation/Foundation.h>
-#import <sqlite3.h>
-
-@class Lite3Table;
 
 
-@interface Lite3DB : NSObject {
-    // a pointer to the sqlite3 database
-    sqlite3 * dbHandle;
-    NSString * dbPath;
-    // names of the tables in this db
-    NSArray * tableNames;
-    // a registry of the enhanced tables in this db
-    NSMutableDictionary * tableDictionary;
+/**
+ * Sample class to be saved to the database.
+ */
+@interface User : NSObject {
+    int _id;
+    NSString * name;
 }
 
-@property (nonatomic) sqlite3 * dbHandle;
-@property (nonatomic, retain) NSString * dbPath;
-
-- (id)initWithDbName: (NSString*)name andSql: (NSString*)sql;
-
-- (void)addLite3Table: (Lite3Table*)table;
-
-- (BOOL)checkConsistency;
-
-- (NSArray*) listTables;
-
-/**
- * Check if the error code indicates an error and log it if so.
- */
-- (BOOL)checkError: (int) rc message:(NSString*)message;
-
-- (BOOL)checkError: (int) rc message:(NSString*)message sql:(const char*) sql ;
-
-/**
- * Format the date.
- */
-+(NSString *)formatDateUTC:(NSDate *)localDate;
-
-/**
- */
-- (BOOL)startTransaction;
-
-/**
- */
-- (BOOL)endTransaction;
-
--(BOOL)compileUpdateStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName arguments: (NSArray*)arguments;
-
--(BOOL)compileCountStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName;
+@property (nonatomic) int _id;
+@property (nonatomic,retain) NSString* name;
 
 @end

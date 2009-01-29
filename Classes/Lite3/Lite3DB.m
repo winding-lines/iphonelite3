@@ -47,6 +47,16 @@
     return TRUE;
 }
 
+-(BOOL)checkError: (int) rc message: (NSString*) message sql:(const char*) sql  {
+    if ( rc != SQLITE_DONE && rc != SQLITE_OK && rc!= SQLITE_ROW ) {     
+        const char * error = sqlite3_errmsg( dbHandle );        
+        NSLog( @"%@ -- DB error %s -- %s",  message, error, sql );
+        return FALSE;
+    }    
+    return TRUE;
+}
+
+
 /**
  * Format the date in the UTC timezone and in a format that will be properly decoded by Ruby On Rails and other backend frameworks.
  */
@@ -217,7 +227,7 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     // NSLog(@"Creating stored procedure %@.", query);
     const char *cString =[query UTF8String];
     int rc = sqlite3_prepare_v2( dbHandle, cString, -1, stmt_p, NULL );
-    return [self checkError: rc message: @"Creating update statement"];
+    return [self checkError: rc message: @"Creating update statement" sql: cString ];
     
 }
 

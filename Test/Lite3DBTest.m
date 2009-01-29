@@ -26,11 +26,11 @@
 #import "GTMUnitTestDevLog.h"
 #import "Lite3DB.h"
 #import "Lite3Table.h"
-#import "Hello.h"
+#import "User.h"
 
 @interface Lite3DBTest: SenTestCase {
     Lite3DB * db;
-    Lite3Table * helloTable;
+    Lite3Table * userTable;
 }
 
 @end
@@ -39,14 +39,14 @@
 
 - (void)setUp {
     db = [Lite3DB alloc];        
-    db = [db initWithDbName: @"test" andSql:@"create table hello(id integer, name text);"];
+    db = [db initWithDbName: @"test" andSql:@"create table users(id integer, name text);"];
     [GTMUnitTestDevLog log: @"full path: %@", db.dbPath];
-    helloTable = [[Lite3Table lite3TableName: @"hello" withDb: db forClassName:@"Hello"] retain];
+    userTable = [[Lite3Table lite3TableName: @"users" withDb: db forClassName:@"User"] retain];
 }
 
 
 - (void)tearDown {
-   [helloTable release];
+   [userTable release];
    [db release];
 }
 
@@ -62,24 +62,24 @@
 }
 
 - (void) testTable {
-    STAssertNotNil( helloTable, @"HelloTable is nil", helloTable );
-    STAssertTrue( [helloTable tableExists], @"Table does not exists", nil );
-    [helloTable truncate];
-    NSArray * all = [helloTable select: nil];
+    STAssertNotNil( userTable, @"HelloTable is nil", userTable );
+    STAssertTrue( [userTable tableExists], @"Table does not exists", nil );
+    [userTable truncate];
+    NSArray * all = [userTable select: nil];
     STAssertNotNil( all, @"Result from empty table is null", all );
     int count = [all count];
     STAssertEquals( count, 0, @"Count not zero", count );
 }
 
 - (void) testSavingIncreasesCount {
-    Hello * hello = [[Hello alloc] init];
-    [helloTable update: hello];
-    NSArray * all = [helloTable select: nil];
+    User * user = [[User alloc] init];
+    [userTable update: user];
+    NSArray * all = [userTable select: nil];
     STAssertNotNil( all, @"Result from table with content is %@", all );
     int count = [all count];
     STAssertEquals( count, 1, @"Count not one -- through 'select'", count );
     // count though the count method
-    count = [helloTable count];
+    count = [userTable count];
     STAssertEquals( count, 1, @"Count not one -- through 'count'", count );
     
 }

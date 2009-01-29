@@ -128,6 +128,10 @@
     return pt;
 }
 
+- (BOOL)isValid {
+    return arguments!=nil;
+}
+
 - (BOOL)compileStatements {
     if ( ! [db compileUpdateStatement: &updateStmt tableName: tableName arguments: arguments] ) {
         return FALSE;
@@ -141,62 +145,67 @@
 - (BOOL)mapToClass: (NSString*)clsName {
     NSMutableArray * _arguments = [[NSMutableArray alloc] init];
     NSMutableDictionary * _linkDictionary = [[NSMutableDictionary alloc] init];
-    Class cls = objc_getClass([clsName cStringUsingEncoding: NSASCIIStringEncoding]);
-    if ( cls != nil ) {
-        objc_property_t * properties = NULL; 
-        unsigned int outCount;
-        properties = class_copyPropertyList( cls, &outCount);
-        if ( outCount != 0 ) {
-            for( int i=0; i<outCount;i++ ) {
-                Lite3Arg * pa = [[Lite3Arg alloc] init];
-                const char * propertyName =  property_getName(properties[i]);
-                pa.ivar = class_getInstanceVariable( cls, propertyName );
-                // by convention bypass initial _
-                if ( propertyName[0] == '_' ) {
-                    propertyName = propertyName+1;
-                }
-                pa.name = [[NSString alloc] initWithCString: propertyName encoding: NSASCIIStringEncoding];
-                
-                
-                const char *attributes = property_getAttributes(properties[i]);
-                if ( attributes != NULL ) {
-                    if ( strncmp(attributes,"Ti",2) == 0 ) {
-                        pa.preparedType = _LITE3_INT;
-                    } else if ( strncmp(attributes,"Td",2) == 0 ) {
-                        pa.preparedType = _LITE3_DOUBLE;
-                    } else if ( strncmp(attributes,"T@\"NSString\"",12) == 0 ) {
-                        pa.preparedType = _LITE3_STRING;
-                    } else if ( strncmp(attributes,"T@\"NSDate\"",10) == 0 ) {
-                        pa.preparedType = _LITE3_TIMESTAMP;
-                    } else if ( strncmp(attributes,"T^@\"", 4 ) == 0 ) {
-                        // assume this is a many-to-many relationship and extract the class name
-                        const char * comma = strchr( attributes, ',' );
-                        comma = comma - 5;
-                        NSString * linkedClassName = [NSString stringWithCString: attributes+4 length:(comma-attributes)];
-                        if ( [_linkDictionary objectForKey: linkedClassName] == nil ) {
-                            Lite3LinkTable * linkTable = [[Lite3LinkTable alloc] initWithDb: db];
-                            linkTable.primaryTable = self;
-                            linkTable.secondaryClassName = linkedClassName;
-                            [_linkDictionary setObject:linkTable forKey:linkedClassName];
-                        }
-                        // no need to add a  prepared argument for now
-                        [pa release];
-                        pa = nil;
-                    } else {
-                        NSLog( @"Need to decode %s", attributes );
+    const char * _c = [clsName cStringUsingEncoding: NSASCIIStringEncoding];
+    Class cls = objc_getClass(_c);
+    if ( cls == nil ) {
+        NSLog( @"Cannot load class '%s'", _c );
+        return FALSE;
+    }
+    objc_property_t * properties = NULL; 
+    unsigned int outCount;
+    properties = class_copyPropertyList( cls, &outCount);
+    if ( outCount != 0 ) {
+        for( int i=0; i<outCount;i++ ) {
+            Lite3Arg * pa = [[Lite3Arg alloc] init];
+            const char * propertyName =  property_getName(properties[i]);
+            pa.ivar = class_getInstanceVariable( cls, propertyName );
+            // by convention bypass initial _
+            if ( propertyName[0] == '_' ) {
+                propertyName = propertyName+1;
+            }
+            pa.name = [[NSString alloc] initWithCString: propertyName encoding: NSASCIIStringEncoding];
+            
+            
+            const char *attributes = property_getAttributes(properties[i]);
+            if ( attributes != NULL ) {
+                if ( strncmp(attributes,"Ti",2) == 0 ) {
+                    pa.preparedType = _LITE3_INT;
+                } else if ( strncmp(attributes,"Td",2) == 0 ) {
+                    pa.preparedType = _LITE3_DOUBLE;
+                } else if ( strncmp(attributes,"T@\"NSString\"",12) == 0 ) {
+                    pa.preparedType = _LITE3_STRING;
+                } else if ( strncmp(attributes,"T@\"NSDate\"",10) == 0 ) {
+                    pa.preparedType = _LITE3_TIMESTAMP;
+                } else if ( strncmp(attributes,"T^@\"", 4 ) == 0 ) {
+                    // assume this is a many-to-many relationship and extract the class name
+                    const char * comma = strchr( attributes, ',' );
+                    comma = comma - 5;
+                    NSString * linkedClassName = [NSString stringWithCString: attributes+4 length:(comma-attributes)];
+                    if ( [_linkDictionary objectForKey: linkedClassName] == nil ) {
+                        Lite3LinkTable * linkTable = [[Lite3LinkTable alloc] initWithDb: db];
+                        linkTable.primaryTable = self;
+                        linkTable.secondaryClassName = linkedClassName;
+                        [_linkDictionary setObject:linkTable forKey:linkedClassName];
                     }
-                }
-                if( pa != nil ) {
-                    [_arguments addObject:pa];
+                    // no need to add a  prepared argument for now
+                    [pa release];
+                    pa = nil;
+                } else {
+                    NSLog( @"Need to decode %s", attributes );
                 }
             }
-        }
-        if ( properties != NULL ) {
-            free( properties );
+            if( pa != nil ) {
+                [_arguments addObject:pa];
+            }
         }
     }
+    if ( properties != NULL ) {
+        free( properties );
+    }
     arguments = _arguments;
-    linkedTables = [[NSArray alloc] initWithArray: [_linkDictionary allValues]];
+    if ( [_linkDictionary count] > 0 ) {
+        linkedTables = [[NSArray alloc] initWithArray: [_linkDictionary allValues]];
+    }
     
     return TRUE;
 }
