@@ -1,21 +1,25 @@
+WHAT?
+XCode3 iPhone project with Lite3* classes for serialization and deserialization of arbitrary classes to a sqlite3 database.
+
+Also I integrated the Unit tests from the Google Toolkit for Mac.
+
+THIS PROJECT IS IN ALPHA STAGE. I am working on it as part of another application and I am implementing and sharing features as I need them.
 Report issues or write suggestions here:
 
 http://decodeideas.lighthouseapp.com/projects/24414-iphonelite3/overview
 
 
-One day after I created this project I found the following project through the iPhone dev twitter list.
+OTHER PROJECTS
+1. One day after I created this project I found the following project through the iPhone dev twitter list.
 
 http://code.google.com/p/sqlitepersistentobjects/
 
-Gotta love it :-)
+2. The following is using the ActiveRecord approach of inheriting from a basic class.
+http://github.com/aptiva/activerecord/tree/master
 
-My approach is a bit different so I will continue using iphonelite3 for my current project.
+IPHONELITE3	
 
-XCode3 iPhone project with Lite3* classes for serialization and deserialization of arbitrary classes to a sqlite3 database.
-
-THIS PROJECT IS IN ALPHA STAGE. I am working on it as part of another application and I am implementing and sharing features as I need them.
-
-Also integrated the Unit tests from the Google Toolkit for Mac.
+The current project is using Objective-C reflection instead of inheritance. It is a lot simpler than the above projects partially due to the lack of features.
 
 Look in the file Test/Lite3DBTest.m for example of usage. Generally the database will be created and deployed with the application so that you can ship pre-filled tables. The other option is to create the database upon first usage by providing the DDL.
 
