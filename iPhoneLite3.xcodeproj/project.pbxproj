@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181992030F30B89C0002A348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181992020F30B89C0002A348 /* Icon.png */; };
+		18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18750CF10F31588B007B55EC /* NSArrayTest.m */; };
 		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
 		18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD930F2FE23D003AADED /* Lite3DBTest.m */; };
 		18ECFDA20F2FE23D003AADED /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD940F2FE23D003AADED /* Hello.m */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		181992020F30B89C0002A348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		18750CF10F31588B007B55EC /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayTest.m; path = Test/NSArrayTest.m; sourceTree = "<group>"; };
 		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -124,6 +126,7 @@
 		18ECFD770F2FE10D003AADED /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				18750CF10F31588B007B55EC /* NSArrayTest.m */,
 				18ECFD930F2FE23D003AADED /* Lite3DBTest.m */,
 				18ECFD940F2FE23D003AADED /* Hello.m */,
 				18ECFD950F2FE23D003AADED /* Hello.h */,
@@ -306,6 +309,7 @@
 				18ECFDAF0F2FE30F003AADED /* Lite3Table.m in Sources */,
 				18ECFDB00F2FE30F003AADED /* Lite3LinkTable.m in Sources */,
 				18ECFDB10F2FE30F003AADED /* Lite3DB.m in Sources */,
+				18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

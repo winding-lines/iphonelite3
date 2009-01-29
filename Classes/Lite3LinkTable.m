@@ -28,9 +28,25 @@
 #import "Lite3DB.h"
 
 
+/**
+ * Define the naming conventions used by the code.
+ * Can be changed to adapt to a different set of conventions.
+ */
+@interface Lite3LinkTable(NamingConventions)
+
+/**
+ * Compute the table name for the link table (ruby on rails convention)
+ * - sort the table names alphabetically
+ * - join them with '_'
+ * 
+ */
+- (NSString*) computeLinkTableName;
+@end
+
 @implementation Lite3LinkTable
 
-@synthesize mainTable;
+@synthesize ownTable;
+@synthesize primaryTable;
 @synthesize secondaryClassName;
 @synthesize secondaryTable;
 
@@ -39,7 +55,6 @@
         return nil;
     }
     db = _db;
-    updateStmt = NULL;
     deleteForPrimaryStmt=NULL;
     return self;
 }
@@ -49,28 +64,39 @@
         return;
     }
     Lite3Arg * primary = [[Lite3Arg alloc] init];
-    primary.name = [[NSString alloc] initWithFormat: @"%@_id", [mainTable.className lowercaseString]];
+    primary.name = [NSString stringWithFormat: @"%@_id", [primaryTable.className lowercaseString]];
     Lite3Arg * secondary = [[Lite3Arg alloc] init];
-    secondary.name = [[NSString alloc] initWithFormat: @"%@_id",[secondaryTable.className lowercaseString]];
-    arguments = [[NSMutableArray alloc] initWithObjects: primary, secondary ];
+    secondary.name = [NSString stringWithFormat: @"%@_id",[secondaryTable.className lowercaseString]];
+    arguments = [[NSArray alloc] initWithObjects: primary, secondary, nil ];
+    [primary release];
+    [secondary release];
 }
+
+- (NSString*) computeLinkTableName {
+    if ( [primaryTable.tableName compare: secondaryTable.tableName ] == NSOrderedAscending ) {
+        return [NSString stringWithFormat: @"%@_%@", primaryTable.tableName, secondaryTable.tableName];
+    } else {
+        return [NSString stringWithFormat: @"%@_%@", secondaryTable.tableName, primaryTable.tableName];
+    }
+}
+
 
 -(BOOL)compileStatements  {
     [self prepareArguments];
-    NSString * tableName = [NSString stringWithFormat: @"%@_%@", mainTable.tableName, secondaryTable.tableName];
-    return [db compileUpdateStatement: &updateStmt tableName: tableName arguments: arguments];
+    ownTable = [Lite3Table lite3TableName:[self computeLinkTableName] withDb:db];
+    ownTable.arguments = arguments;
+    return [ownTable compileStatements];
 }
 
 -(void)dealloc {
-    if ( updateStmt != NULL) {
-        sqlite3_finalize(updateStmt); updateStmt=NULL;
-    }
+    [ownTable release];
     if( deleteForPrimaryStmt != NULL ) {
         sqlite3_finalize(deleteForPrimaryStmt); deleteForPrimaryStmt=NULL;
     }
     [arguments dealloc];
-    [mainTable dealloc];
+    [primaryTable dealloc];
     [secondaryTable dealloc];
+    [ownTable dealloc];
     [super dealloc];
 }
 

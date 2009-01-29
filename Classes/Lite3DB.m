@@ -38,10 +38,10 @@
 /**
  * Check to see if there is a sqlite error code and returns if so.
  */
--(BOOL)checkError: (int) rc  {
+-(BOOL)checkError: (int) rc message: (NSString*) message  {
     if ( rc != SQLITE_DONE && rc != SQLITE_OK && rc!= SQLITE_ROW ) {     
         const char * error = sqlite3_errmsg( dbHandle );
-        NSLog( @"Db error %s",  error );
+        NSLog( @"%@ -- DB error %s",  message, error );
         return FALSE;
     }    
     return TRUE;
@@ -114,7 +114,7 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     dbHandle = NULL;
     self.dbPath = [Lite3DB  pathToDB: name];
     int rc = sqlite3_open([dbPath UTF8String], &dbHandle);
-    if ( ![self checkError: rc] ) {
+    if ( ![self checkError: rc message: @"Opening DB"] ) {
         if ( dbHandle != NULL ) {
             sqlite3_close(dbHandle);
             dbHandle = NULL;
@@ -128,7 +128,7 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
         char * zErrMsg = NULL;
         int rc = sqlite3_exec(dbHandle,[ddl UTF8String ], 
                               listTablesCallback, NULL, &zErrMsg);
-        [self checkError: rc];
+        [self checkError: rc message: @"Executing DDL"];
     }
     return self;
     
@@ -141,9 +141,9 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     }
     tableNames = [[NSMutableArray alloc] init];
     char * zErrMsg = NULL;
-    int rc = sqlite3_exec(dbHandle, "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name", 
+    int rc = sqlite3_exec(dbHandle, "SELECT name FROM sqlite_master WHERE type='table' and name not like 'sqlite_%' ORDER BY name", 
                           listTablesCallback, (void*)tableNames, &zErrMsg);
-    [self checkError: rc];
+    [self checkError: rc message: @"Listing tables"];
     if ( zErrMsg != NULL ) {
         sqlite3_free(zErrMsg);
     }
@@ -154,12 +154,12 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
 
 - (BOOL)startTransaction {
     int rc = sqlite3_exec(dbHandle, "BEGIN TRANSACTION;", 0, 0, 0);
-    return [self checkError: rc];    
+    return [self checkError: rc message: @"Starting transaction"];    
 }
 
 - (BOOL)endTransaction {
     int rc = sqlite3_exec(dbHandle, "END TRANSACTION;", 0, 0, 0);
-    return [self checkError: rc];    
+    return [self checkError: rc message: @"Ending transaction"];    
 }
 
 - (void)addLite3Table:(Lite3Table*)table {
@@ -178,12 +178,11 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     }
     NSString * className;
     for( className in tableDictionary ) {
-        NSLog( @"className %@", className );
         Lite3Table * table = [tableDictionary objectForKey:className];
         if ( table.linkedTables != nil ) {
             Lite3LinkTable * linked;
             for( linked in table.linkedTables ) {
-                linked.mainTable = table;
+                linked.primaryTable = table;
                 linked.secondaryTable = [tableDictionary objectForKey:linked.secondaryClassName];
                 if( linked.secondaryTable == nil ) {
                     NSLog( @"Bad linked table %@ in primary table %@", linked.secondaryClassName, className );
@@ -218,14 +217,14 @@ int listTablesCallback(void *helperP, int columnCount, char **values, char **col
     // NSLog(@"Creating stored procedure %@.", query);
     const char *cString =[query UTF8String];
     int rc = sqlite3_prepare_v2( dbHandle, cString, -1, stmt_p, NULL );
-    return [self checkError: rc];
+    return [self checkError: rc message: @"Creating update statement"];
     
 }
 
 -(BOOL)compileCountStatement:(sqlite3_stmt**)stmt_p tableName: (NSString*)tableName {
     NSString * query = [[NSString alloc] initWithFormat: @"select count(*) from %@;", tableName ];
     int rc = sqlite3_prepare_v2( dbHandle, [query UTF8String], -1, stmt_p, NULL);
-    return [self checkError: rc];
+    return [self checkError: rc message: @"Creating count statement"];
 }
 
 

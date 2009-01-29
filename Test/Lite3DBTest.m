@@ -41,46 +41,48 @@
     db = [Lite3DB alloc];        
     db = [db initWithDbName: @"test" andSql:@"create table hello(id integer, name text);"];
     [GTMUnitTestDevLog log: @"full path: %@", db.dbPath];
-    helloTable = [Lite3Table lite3TableName: @"hello" withDb: db forClassName:@"Hello"];
-    
+    helloTable = [[Lite3Table lite3TableName: @"hello" withDb: db forClassName:@"Hello"] retain];
 }
 
 
 - (void)tearDown {
-    //[helloTable release];
-    [db release];
+   [helloTable release];
+   [db release];
 }
 
 - (void)testListTables {
     STAssertNotNil( db, @"db should not be nil", db );
     NSArray * tables = [db listTables];
     STAssertNotNil( tables,@"tables should not be nil",tables);
-    int count = [tables count];
-    STAssertGreaterThan( count, 0, @"table count should be bigger than zero", nil );
-    [GTMUnitTestDevLog log: @"table count %d, first table %@", [tables count], [tables objectAtIndex: 0]];
 }
 
-- (void)testHelloTable {
+- (void)testTablesCount {
+    int count = [ [db listTables] count];
+    STAssertGreaterThan( count, 0, @"table count should be bigger than zero", nil );
+}
+
+- (void) testTable {
     STAssertNotNil( helloTable, @"HelloTable is nil", helloTable );
+    STAssertTrue( [helloTable tableExists], @"Table does not exists", nil );
     [helloTable truncate];
     NSArray * all = [helloTable select: nil];
     STAssertNotNil( all, @"Result from empty table is null", all );
     int count = [all count];
     STAssertEquals( count, 0, @"Count not zero", count );
+}
+
+- (void) testSavingIncreasesCount {
     Hello * hello = [[Hello alloc] init];
     [helloTable update: hello];
-    all = [helloTable select: nil];
-    STAssertNotNil( all, @"Result from table with content is null", all );
-    count = [all count];
-    STAssertEquals( count, 1, @"Count not one", count );
+    NSArray * all = [helloTable select: nil];
+    STAssertNotNil( all, @"Result from table with content is %@", all );
+    int count = [all count];
+    STAssertEquals( count, 1, @"Count not one -- through 'select'", count );
+    // count though the count method
+    count = [helloTable count];
+    STAssertEquals( count, 1, @"Count not one -- through 'count'", count );
+    
 }
 
-/**
- * This is a sample test that fails.
- */
-- (void)testFAIL {
-    STAssertNotNil( nil, @"Just to show a failing test :-)", nil );
-
-}
 
 @end

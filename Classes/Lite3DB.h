@@ -53,7 +53,7 @@
 /**
  * Check if the error code indicates an error and log it if so.
  */
-- (BOOL)checkError: (int) rc;
+- (BOOL)checkError: (int) rc message:(NSString*)message;
 
 /**
  * Format the date.

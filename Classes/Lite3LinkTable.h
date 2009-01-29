@@ -35,21 +35,24 @@
  */
 @interface Lite3LinkTable : NSObject {
     Lite3DB * db;
+    
+    // Provide functionality on the link table itself
+    Lite3Table *ownTable;
     // link to the main table, one side of the many-to-many relationship
-    Lite3Table * mainTable;
+    Lite3Table * primaryTable;
+    
     // name of the class for the other side of the relationship
     NSString * secondaryClassName;
-    // link to the second table (only known after all the tables have been read in)
+    // link to the second table (only linked after all the tables have been read in)
     Lite3Table * secondaryTable;
-    // precompiled update statement
-    sqlite3_stmt * updateStmt;
     // precompiled delete statement for a given primary class id
     sqlite3_stmt * deleteForPrimaryStmt;
     
     NSArray * arguments;
 }
 
-@property (nonatomic,retain) Lite3Table * mainTable;
+@property (nonatomic,retain) Lite3Table * ownTable;
+@property (nonatomic,retain) Lite3Table * primaryTable;
 @property (nonatomic,retain) NSString * secondaryClassName;
 @property (nonatomic,retain) Lite3Table * secondaryTable;
 

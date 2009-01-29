@@ -61,6 +61,8 @@ OTHER DEALINGS IN THE SOFTWARE.
     NSString * tableName;
     // the name of the class being persisted in this table
     NSString * className;
+    // lower case of the class name
+    NSString * classNameLowerCase;
     // custom representation of the SQL arguments for faster processing
     NSArray * arguments;
     // list of linked tables for many-to-many relationships
@@ -68,14 +70,27 @@ OTHER DEALINGS IN THE SOFTWARE.
 }
 
 @property(nonatomic,retain) NSString * tableName;
-@property(nonatomic,retain) NSString * className;
+@property(nonatomic,retain,setter=setClassName:) NSString * className;
 @property(nonatomic,retain) NSArray * arguments;
 @property(nonatomic,retain) NSArray * linkedTables;
 
-+ (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db forClassName:(NSString*)clsName;
++ (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db;
++ (Lite3Table*)lite3TableName:(NSString*)name withDb:(Lite3DB*)_db forClassName:(NSString*)_className;
 
 /**
- * Return the count of objects in the database.
+ * Check if the table mapped by this entity really exists.
+ */
+-(BOOL)tableExists;
+
+/**
+ * Compile statements after the class is initialized. 
+ * This is not required if passing in a class name to the factory method.
+ * Probably better to do this automatically when setting the arguments.
+ */
+- (BOOL)compileStatements;
+
+/**
+ * Return the count of rows in the table.
  */
 -(int)count;
 
@@ -83,6 +98,16 @@ OTHER DEALINGS IN THE SOFTWARE.
  * Update the table from the object or  dictionary.
  */
 - (int)update:(id)data;
+
+/**
+ * Update the table from all the elements in the array.
+ * Allow some flexibility in the data to be able to import Ruby JSON (with or without an extra class wrapper)
+ *   [
+ *     { "class_name" : { id: 0, ...} },
+ *     { "class_name" : { "id": 1, ...} }
+ *   ]
+ */
+- (int)updateAll:(NSArray*)objects;
 
 /**
  * Return a list of objects that match the optional selectClause.
