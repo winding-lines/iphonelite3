@@ -54,7 +54,11 @@
 
 #pragma mark "-- Lite3Table private --"
 @interface Lite3Table(Private)
+
 - (BOOL)mapToClass: (NSString*)clsName;
+
+- (int)updateOwnTable:(id)data;
+
 @end
 
 
@@ -210,10 +214,19 @@
 
 
 #pragma mark "--- Lite3Table database functions ---"
+- (int)update:(id)data {
+    int rc = [self updateOwnTable: data];
+    if ( linkedTables != nil ) {
+        for ( Lite3LinkTable * linkTable in linkedTables ) {
+            [linkTable update: data];
+        }
+    }
+    return rc;
+}
 /**
  * Update from the object or dictionary using Key Value access.
  */
-- (int)update:(id)data {
+- (int)updateOwnTable:(id)data {
     int rc = sqlite3_clear_bindings(updateStmt);    
     [db checkError: rc message: @"Clearing statement bindings"];
     for( int i=0;i<[arguments count];i++ ) {

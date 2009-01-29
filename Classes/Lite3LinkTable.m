@@ -41,6 +41,11 @@
  * 
  */
 - (NSString*) computeLinkTableName;
+
+/**
+ * Compute the property name to look for the array of IDs in the incoming data.
+ */
+- (NSString*) computePropertyName;
 @end
 
 @implementation Lite3LinkTable
@@ -72,13 +77,6 @@
     [secondary release];
 }
 
-- (NSString*) computeLinkTableName {
-    if ( [primaryTable.tableName compare: secondaryTable.tableName ] == NSOrderedAscending ) {
-        return [NSString stringWithFormat: @"%@_%@", primaryTable.tableName, secondaryTable.tableName];
-    } else {
-        return [NSString stringWithFormat: @"%@_%@", secondaryTable.tableName, primaryTable.tableName];
-    }
-}
 
 
 -(BOOL)compileStatements  {
@@ -100,5 +98,25 @@
     [super dealloc];
 }
 
+-(int)update: (id)data {
+    NSArray * ids = [data objectForKey: [self computePropertyName]];
+    if ( ids == nil ) {
+        return 0;
+    }
+    NSLog(@"Need to finish the implementation here");
+    return 0;
+}
 
+#pragma mark "-- NamingConventions --"
+- (NSString*) computeLinkTableName {
+    if ( [primaryTable.tableName compare: secondaryTable.tableName ] == NSOrderedAscending ) {
+        return [NSString stringWithFormat: @"%@_%@", primaryTable.tableName, secondaryTable.tableName];
+    } else {
+        return [NSString stringWithFormat: @"%@_%@", secondaryTable.tableName, primaryTable.tableName];
+    }
+}
+
+- (NSString*) computePropertyName {
+    return [NSString stringWithFormat: @"%@_ids", [secondaryTable.className lowercaseString] ];
+}
 @end

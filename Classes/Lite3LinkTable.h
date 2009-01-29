@@ -57,7 +57,13 @@
 @property (nonatomic,retain) Lite3Table * secondaryTable;
 
 -(id)initWithDb:(Lite3DB*) _db;
+
 -(BOOL)compileStatements;
+
+/**
+ * Update the linked table from the field with the right name, if one exists.
+ */
+-(int)update: (id)data;
 
 
 @end
