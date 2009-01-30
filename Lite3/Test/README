@@ -1,5 +1,0 @@
-This are the test cases. They require you to copy in the project the Google ToolKit for Mac support files.
-
-These files only need to be added to your UnitTest target.
-
-Do not add the README file to any target or you will get some warnings during the compilation process.

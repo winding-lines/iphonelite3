@@ -13,6 +13,8 @@
 		189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A80F32A248008D9EA4 /* Lite3DBTest.m */; };
 		189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A90F32A248008D9EA4 /* NSArrayTest.m */; };
 		189287B20F32A248008D9EA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287AC0F32A248008D9EA4 /* User.m */; };
+		18928B330F3387B4008D9EA4 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18928B320F3387B4008D9EA4 /* Lite3Arg.m */; };
+		18928B340F3387B4008D9EA4 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18928B320F3387B4008D9EA4 /* Lite3Arg.m */; };
 		18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
 		18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
 		18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
@@ -47,6 +49,8 @@
 		189287AA0F32A248008D9EA4 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		189287AB0F32A248008D9EA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		189287AC0F32A248008D9EA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		18928B310F3387B4008D9EA4 /* Lite3Arg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Arg.h; sourceTree = "<group>"; };
+		18928B320F3387B4008D9EA4 /* Lite3Arg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Arg.m; sourceTree = "<group>"; };
 		18B7C55B0F320E6500013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		18B7C5940F32408C00013531 /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3DB.h; sourceTree = "<group>"; };
 		18B7C5950F32408C00013531 /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DB.m; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		18B7C5930F32408C00013531 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18928B310F3387B4008D9EA4 /* Lite3Arg.h */,
+				18928B320F3387B4008D9EA4 /* Lite3Arg.m */,
 				18B7C5940F32408C00013531 /* Lite3DB.h */,
 				18B7C5950F32408C00013531 /* Lite3DB.m */,
 				18B7C5960F32408C00013531 /* Lite3LinkTable.h */,
@@ -350,6 +356,7 @@
 				189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */,
 				189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */,
 				189287B20F32A248008D9EA4 /* User.m in Sources */,
+				18928B330F3387B4008D9EA4 /* Lite3Arg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +370,7 @@
 				18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */,
 				18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */,
 				18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */,
+				18928B340F3387B4008D9EA4 /* Lite3Arg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
