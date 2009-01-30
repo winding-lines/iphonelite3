@@ -77,11 +77,10 @@ static const char * ddl =
 
 - (void) testImport {
     
-    id input = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: @"1", @"group1", [NSArray arrayWithObjects: @"1", @"2", @"3",nil],nil] forKeys:[NSArray arrayWithObjects: @"_id", @"name", @"user_ids", nil]];
+    id input = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: @"1", @"group1", [NSArray arrayWithObjects: @"1", @"2", @"3",nil],nil] forKeys:[NSArray arrayWithObjects: @"id", @"name", @"user_ids", nil]];
     NSArray * data = [NSArray arrayWithObjects: input, nil];
     STAssertNotNil ( data, @"data not nil", data );
     STAssertGreaterThan( (int)[data count], 0, @"data is empty", nil );
-    
     
     [groupsTable truncate];
     STAssertEquals( 0, [groupsTable count], @"Groups table not empty after truncate, instead %d", [groupsTable count] );

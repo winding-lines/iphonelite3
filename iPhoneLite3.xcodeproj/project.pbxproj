@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		181992030F30B89C0002A348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181992020F30B89C0002A348 /* Icon.png */; };
-		18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18750CF10F31588B007B55EC /* NSArrayTest.m */; };
-		18B7C5310F31A8CC00013531 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52C0F31A8CC00013531 /* Group.m */; };
-		18B7C5320F31A8CC00013531 /* GroupTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52E0F31A8CC00013531 /* GroupTest.m */; };
-		18B7C5330F31A8CC00013531 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C52F0F31A8CC00013531 /* User.m */; };
+		189287AD0F32A248008D9EA4 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A60F32A248008D9EA4 /* Group.m */; };
+		189287AE0F32A248008D9EA4 /* GroupTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A70F32A248008D9EA4 /* GroupTest.m */; };
+		189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A80F32A248008D9EA4 /* Lite3DBTest.m */; };
+		189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A90F32A248008D9EA4 /* NSArrayTest.m */; };
+		189287B20F32A248008D9EA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287AC0F32A248008D9EA4 /* User.m */; };
 		18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
 		18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
 		18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
-		18B7C5B50F32408C00013531 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 18B7C59A0F32408C00013531 /* README */; };
 		18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
 		18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
 		18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
-		18B7C5D00F32408C00013531 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 18B7C59A0F32408C00013531 /* README */; };
 		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
-		18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD930F2FE23D003AADED /* Lite3DBTest.m */; };
 		18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */; };
 		18ECFDA40F2FE23D003AADED /* GTMSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */; };
 		18ECFDA50F2FE23D003AADED /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9A0F2FE23D003AADED /* GTMRegex.m */; };
@@ -41,12 +39,14 @@
 
 /* Begin PBXFileReference section */
 		181992020F30B89C0002A348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		18750CF10F31588B007B55EC /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayTest.m; path = Test/NSArrayTest.m; sourceTree = "<group>"; };
-		18B7C52C0F31A8CC00013531 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Test/Group.m; sourceTree = "<group>"; };
-		18B7C52D0F31A8CC00013531 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Test/Group.h; sourceTree = "<group>"; };
-		18B7C52E0F31A8CC00013531 /* GroupTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTest.m; path = Test/GroupTest.m; sourceTree = "<group>"; };
-		18B7C52F0F31A8CC00013531 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Test/User.m; sourceTree = "<group>"; };
-		18B7C5300F31A8CC00013531 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Test/User.h; sourceTree = "<group>"; };
+		189287A50F32A248008D9EA4 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		189287A60F32A248008D9EA4 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		189287A70F32A248008D9EA4 /* GroupTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTest.m; sourceTree = "<group>"; };
+		189287A80F32A248008D9EA4 /* Lite3DBTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DBTest.m; sourceTree = "<group>"; };
+		189287A90F32A248008D9EA4 /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTest.m; sourceTree = "<group>"; };
+		189287AA0F32A248008D9EA4 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		189287AB0F32A248008D9EA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		189287AC0F32A248008D9EA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		18B7C55B0F320E6500013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		18B7C5940F32408C00013531 /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3DB.h; sourceTree = "<group>"; };
 		18B7C5950F32408C00013531 /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DB.m; sourceTree = "<group>"; };
@@ -58,7 +58,6 @@
 		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		18ECFD930F2FE23D003AADED /* Lite3DBTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lite3DBTest.m; path = Test/Lite3DBTest.m; sourceTree = "<group>"; };
 		18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMUnitTestDevLog.m; path = Test/GTMUnitTestDevLog.m; sourceTree = "<group>"; };
 		18ECFD970F2FE23D003AADED /* GTMUnitTestDevLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMUnitTestDevLog.h; path = Test/GTMUnitTestDevLog.h; sourceTree = "<group>"; };
 		18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMSenTestCase.m; path = Test/GTMSenTestCase.m; sourceTree = "<group>"; };
@@ -126,9 +125,25 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		189287A40F32A248008D9EA4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				189287A50F32A248008D9EA4 /* Group.h */,
+				189287A60F32A248008D9EA4 /* Group.m */,
+				189287A70F32A248008D9EA4 /* GroupTest.m */,
+				189287A80F32A248008D9EA4 /* Lite3DBTest.m */,
+				189287A90F32A248008D9EA4 /* NSArrayTest.m */,
+				189287AA0F32A248008D9EA4 /* README */,
+				189287AB0F32A248008D9EA4 /* User.h */,
+				189287AC0F32A248008D9EA4 /* User.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		18B7C56A0F32408C00013531 /* Lite3 */ = {
 			isa = PBXGroup;
 			children = (
+				189287A40F32A248008D9EA4 /* Test */,
 				18B7C5930F32408C00013531 /* Classes */,
 				18B7C59A0F32408C00013531 /* README */,
 			);
@@ -151,13 +166,6 @@
 		18ECFD770F2FE10D003AADED /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				18B7C52C0F31A8CC00013531 /* Group.m */,
-				18B7C52D0F31A8CC00013531 /* Group.h */,
-				18B7C52E0F31A8CC00013531 /* GroupTest.m */,
-				18B7C52F0F31A8CC00013531 /* User.m */,
-				18B7C5300F31A8CC00013531 /* User.h */,
-				18750CF10F31588B007B55EC /* NSArrayTest.m */,
-				18ECFD930F2FE23D003AADED /* Lite3DBTest.m */,
 				18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */,
 				18ECFD970F2FE23D003AADED /* GTMUnitTestDevLog.h */,
 				18ECFD980F2FE23D003AADED /* GTMSenTestCase.m */,
@@ -292,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				181992030F30B89C0002A348 /* Icon.png in Resources */,
-				18B7C5B50F32408C00013531 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +309,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* iPhoneLite3ViewController.xib in Resources */,
-				18B7C5D00F32408C00013531 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,20 +336,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18ECFDA10F2FE23D003AADED /* Lite3DBTest.m in Sources */,
 				18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */,
 				18ECFDA40F2FE23D003AADED /* GTMSenTestCase.m in Sources */,
 				18ECFDA50F2FE23D003AADED /* GTMRegex.m in Sources */,
 				18ECFDA60F2FE23D003AADED /* GTMIPhoneUnitTestMain.m in Sources */,
 				18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */,
-				18750CF20F31588B007B55EC /* NSArrayTest.m in Sources */,
-				18B7C5310F31A8CC00013531 /* Group.m in Sources */,
-				18B7C5320F31A8CC00013531 /* GroupTest.m in Sources */,
-				18B7C5330F31A8CC00013531 /* User.m in Sources */,
 				18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */,
 				18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */,
 				18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */,
+				189287AD0F32A248008D9EA4 /* Group.m in Sources */,
+				189287AE0F32A248008D9EA4 /* GroupTest.m in Sources */,
+				189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */,
+				189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */,
+				189287B20F32A248008D9EA4 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

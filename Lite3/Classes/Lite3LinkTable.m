@@ -98,11 +98,16 @@
 
 -(int)update: (id)data {
     NSArray * secondaryIds = [data objectForKey: [self computePropertyName]];
-    int _id = [[data objectForKey: @"id"] intValue];
-    if ( secondaryIds == nil ) {
+    NSString * _id = [data objectForKey: @"id"];
+    if ( secondaryIds == nil  || _id == nil ) {
         return 0;
     }
-    NSLog(@"---------- primary %d, secondary count %d ", _id, [secondaryIds count] );
+    NSMutableDictionary * entry = [[NSMutableDictionary alloc] init];
+    [entry setObject: _id forKey: ((Lite3Arg*)[arguments objectAtIndex: 0]).name];
+    for( NSString  * secondaryId in secondaryIds ) {
+        [entry setObject:secondaryId forKey:((Lite3Arg*)[arguments objectAtIndex:1]).name];
+    }
+    [entry release];
     return 0;
 }
 
