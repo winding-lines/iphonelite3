@@ -386,9 +386,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_PREFIX_HEADER = iPhoneLite3_Prefix.pch;
 				INFOPLIST_FILE = "UnitTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -436,6 +437,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhoneLite3_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = iPhoneLite3;
 			};
 			name = Debug;
