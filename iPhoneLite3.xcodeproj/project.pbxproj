@@ -8,18 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		181992030F30B89C0002A348 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181992020F30B89C0002A348 /* Icon.png */; };
-		189287AD0F32A248008D9EA4 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A60F32A248008D9EA4 /* Group.m */; };
 		189287AE0F32A248008D9EA4 /* GroupTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A70F32A248008D9EA4 /* GroupTest.m */; };
 		189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A80F32A248008D9EA4 /* Lite3DBTest.m */; };
-		189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287A90F32A248008D9EA4 /* NSArrayTest.m */; };
 		189287B20F32A248008D9EA4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 189287AC0F32A248008D9EA4 /* User.m */; };
-		18928B330F3387B4008D9EA4 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18928B320F3387B4008D9EA4 /* Lite3Arg.m */; };
-		18928B340F3387B4008D9EA4 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18928B320F3387B4008D9EA4 /* Lite3Arg.m */; };
 		18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
-		18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
 		18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
 		18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5950F32408C00013531 /* Lite3DB.m */; };
-		18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5970F32408C00013531 /* Lite3LinkTable.m */; };
 		18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7C5990F32408C00013531 /* Lite3Table.m */; };
 		18ECFD920F2FE1F7003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
 		18ECFDA30F2FE23D003AADED /* GTMUnitTestDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD960F2FE23D003AADED /* GTMUnitTestDevLog.m */; };
@@ -29,6 +23,16 @@
 		18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9D0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m */; };
 		18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECFD9F0F2FE23D003AADED /* GTMDevLog.m */; };
 		18ECFDB60F2FE377003AADED /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */; };
+		18ED644A0F5B6E0F0044ED84 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64460F5B6E0F0044ED84 /* Lite3LinkTable.m */; };
+		18ED644B0F5B6E0F0044ED84 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64480F5B6E0F0044ED84 /* Lite3Arg.m */; };
+		18ED644C0F5B6E0F0044ED84 /* Lite3LinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64460F5B6E0F0044ED84 /* Lite3LinkTable.m */; };
+		18ED644D0F5B6E0F0044ED84 /* Lite3Arg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64480F5B6E0F0044ED84 /* Lite3Arg.m */; };
+		18ED64530F5B6E200044ED84 /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED644E0F5B6E200044ED84 /* NSArrayTest.m */; };
+		18ED64540F5B6E200044ED84 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED644F0F5B6E200044ED84 /* Group.m */; };
+		18ED64550F5B6E200044ED84 /* PredicateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64510F5B6E200044ED84 /* PredicateTest.m */; };
+		18ED64560F5B6E200044ED84 /* NSArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED644E0F5B6E200044ED84 /* NSArrayTest.m */; };
+		18ED64570F5B6E200044ED84 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED644F0F5B6E200044ED84 /* Group.m */; };
+		18ED64580F5B6E200044ED84 /* PredicateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED64510F5B6E200044ED84 /* PredicateTest.m */; };
 		1D3623260D0F684500981E51 /* iPhoneLite3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -41,24 +45,15 @@
 
 /* Begin PBXFileReference section */
 		181992020F30B89C0002A348 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		189287A50F32A248008D9EA4 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		189287A60F32A248008D9EA4 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		189287A70F32A248008D9EA4 /* GroupTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTest.m; sourceTree = "<group>"; };
 		189287A80F32A248008D9EA4 /* Lite3DBTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DBTest.m; sourceTree = "<group>"; };
-		189287A90F32A248008D9EA4 /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTest.m; sourceTree = "<group>"; };
-		189287AA0F32A248008D9EA4 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		189287AB0F32A248008D9EA4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		189287AC0F32A248008D9EA4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		18928B310F3387B4008D9EA4 /* Lite3Arg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Arg.h; sourceTree = "<group>"; };
-		18928B320F3387B4008D9EA4 /* Lite3Arg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Arg.m; sourceTree = "<group>"; };
 		18B7C55B0F320E6500013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		18B7C5940F32408C00013531 /* Lite3DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3DB.h; sourceTree = "<group>"; };
 		18B7C5950F32408C00013531 /* Lite3DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3DB.m; sourceTree = "<group>"; };
-		18B7C5960F32408C00013531 /* Lite3LinkTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3LinkTable.h; sourceTree = "<group>"; };
-		18B7C5970F32408C00013531 /* Lite3LinkTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3LinkTable.m; sourceTree = "<group>"; };
 		18B7C5980F32408C00013531 /* Lite3Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Table.h; sourceTree = "<group>"; };
 		18B7C5990F32408C00013531 /* Lite3Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Table.m; sourceTree = "<group>"; };
-		18B7C59A0F32408C00013531 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		18ECFD8B0F2FE1E5003AADED /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECFD8D0F2FE1E5003AADED /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		18ECFD910F2FE1F7003AADED /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -73,6 +68,16 @@
 		18ECFD9E0F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMIPhoneUnitTestDelegate.h; path = Test/GTMIPhoneUnitTestDelegate.h; sourceTree = "<group>"; };
 		18ECFD9F0F2FE23D003AADED /* GTMDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMDevLog.m; path = Test/GTMDevLog.m; sourceTree = "<group>"; };
 		18ECFDA00F2FE23D003AADED /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = Test/GTMDefines.h; sourceTree = "<group>"; };
+		18ED64390F5B6D250044ED84 /* Lite3Predicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Predicate.h; sourceTree = "<group>"; };
+		18ED64460F5B6E0F0044ED84 /* Lite3LinkTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3LinkTable.m; sourceTree = "<group>"; };
+		18ED64470F5B6E0F0044ED84 /* Lite3LinkTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3LinkTable.h; sourceTree = "<group>"; };
+		18ED64480F5B6E0F0044ED84 /* Lite3Arg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lite3Arg.m; sourceTree = "<group>"; };
+		18ED64490F5B6E0F0044ED84 /* Lite3Arg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lite3Arg.h; sourceTree = "<group>"; };
+		18ED644E0F5B6E200044ED84 /* NSArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTest.m; sourceTree = "<group>"; };
+		18ED644F0F5B6E200044ED84 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		18ED64500F5B6E200044ED84 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		18ED64510F5B6E200044ED84 /* PredicateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateTest.m; sourceTree = "<group>"; };
+		18ED64520F5B6E200044ED84 /* PredicateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateTest.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iPhoneLite3AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneLite3AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iPhoneLite3AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneLite3AppDelegate.m; sourceTree = "<group>"; };
@@ -132,12 +137,13 @@
 		189287A40F32A248008D9EA4 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				189287A50F32A248008D9EA4 /* Group.h */,
-				189287A60F32A248008D9EA4 /* Group.m */,
+				18ED644E0F5B6E200044ED84 /* NSArrayTest.m */,
+				18ED644F0F5B6E200044ED84 /* Group.m */,
+				18ED64500F5B6E200044ED84 /* Group.h */,
+				18ED64510F5B6E200044ED84 /* PredicateTest.m */,
+				18ED64520F5B6E200044ED84 /* PredicateTest.h */,
 				189287A70F32A248008D9EA4 /* GroupTest.m */,
 				189287A80F32A248008D9EA4 /* Lite3DBTest.m */,
-				189287A90F32A248008D9EA4 /* NSArrayTest.m */,
-				189287AA0F32A248008D9EA4 /* README */,
 				189287AB0F32A248008D9EA4 /* User.h */,
 				189287AC0F32A248008D9EA4 /* User.m */,
 			);
@@ -149,7 +155,6 @@
 			children = (
 				189287A40F32A248008D9EA4 /* Test */,
 				18B7C5930F32408C00013531 /* Classes */,
-				18B7C59A0F32408C00013531 /* README */,
 			);
 			path = Lite3;
 			sourceTree = "<group>";
@@ -157,12 +162,13 @@
 		18B7C5930F32408C00013531 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18928B310F3387B4008D9EA4 /* Lite3Arg.h */,
-				18928B320F3387B4008D9EA4 /* Lite3Arg.m */,
+				18ED64460F5B6E0F0044ED84 /* Lite3LinkTable.m */,
+				18ED64470F5B6E0F0044ED84 /* Lite3LinkTable.h */,
+				18ED64480F5B6E0F0044ED84 /* Lite3Arg.m */,
+				18ED64490F5B6E0F0044ED84 /* Lite3Arg.h */,
+				18ED64390F5B6D250044ED84 /* Lite3Predicate.h */,
 				18B7C5940F32408C00013531 /* Lite3DB.h */,
 				18B7C5950F32408C00013531 /* Lite3DB.m */,
-				18B7C5960F32408C00013531 /* Lite3LinkTable.h */,
-				18B7C5970F32408C00013531 /* Lite3LinkTable.m */,
 				18B7C5980F32408C00013531 /* Lite3Table.h */,
 				18B7C5990F32408C00013531 /* Lite3Table.m */,
 			);
@@ -349,14 +355,15 @@
 				18ECFDA70F2FE23D003AADED /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				18ECFDA80F2FE23D003AADED /* GTMDevLog.m in Sources */,
 				18B7C5B20F32408C00013531 /* Lite3DB.m in Sources */,
-				18B7C5B30F32408C00013531 /* Lite3LinkTable.m in Sources */,
 				18B7C5B40F32408C00013531 /* Lite3Table.m in Sources */,
-				189287AD0F32A248008D9EA4 /* Group.m in Sources */,
 				189287AE0F32A248008D9EA4 /* GroupTest.m in Sources */,
 				189287AF0F32A248008D9EA4 /* Lite3DBTest.m in Sources */,
-				189287B00F32A248008D9EA4 /* NSArrayTest.m in Sources */,
 				189287B20F32A248008D9EA4 /* User.m in Sources */,
-				18928B330F3387B4008D9EA4 /* Lite3Arg.m in Sources */,
+				18ED644A0F5B6E0F0044ED84 /* Lite3LinkTable.m in Sources */,
+				18ED644B0F5B6E0F0044ED84 /* Lite3Arg.m in Sources */,
+				18ED64530F5B6E200044ED84 /* NSArrayTest.m in Sources */,
+				18ED64540F5B6E200044ED84 /* Group.m in Sources */,
+				18ED64550F5B6E200044ED84 /* PredicateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +375,12 @@
 				1D3623260D0F684500981E51 /* iPhoneLite3AppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* iPhoneLite3ViewController.m in Sources */,
 				18B7C5CD0F32408C00013531 /* Lite3DB.m in Sources */,
-				18B7C5CE0F32408C00013531 /* Lite3LinkTable.m in Sources */,
 				18B7C5CF0F32408C00013531 /* Lite3Table.m in Sources */,
-				18928B340F3387B4008D9EA4 /* Lite3Arg.m in Sources */,
+				18ED644C0F5B6E0F0044ED84 /* Lite3LinkTable.m in Sources */,
+				18ED644D0F5B6E0F0044ED84 /* Lite3Arg.m in Sources */,
+				18ED64560F5B6E200044ED84 /* NSArrayTest.m in Sources */,
+				18ED64570F5B6E200044ED84 /* Group.m in Sources */,
+				18ED64580F5B6E200044ED84 /* PredicateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
